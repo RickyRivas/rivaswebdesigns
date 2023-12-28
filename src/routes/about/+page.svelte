@@ -3,12 +3,12 @@
   import SubNavigation from "$lib/components/SubNavigation.svelte"
 
   // stores
-  import { URL, companyName, industry, cityAndState, pages } from "$lib/config"
+  import { URL, companyName, industry, cityAndState, interiorPages } from "$lib/config"
   import { page } from "$app/stores"
   // styles
 
   // logic
-  const thisPage = pages.find((p) => p.path === $page.route.id)
+  const thisPage = interiorPages.find((p) => p.path === $page.route.id)
   const pageTitle = $page.route.id?.slice(1)
 </script>
 

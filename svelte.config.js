@@ -13,7 +13,7 @@ const config = {
 		alias: {
 			'$styles': '/src/styles',
 			'$lib': '/src/lib'
-		}
+		},
 	}
 };
 

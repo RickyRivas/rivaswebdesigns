@@ -1,10 +1,29 @@
 #landing {
     display: block;
-    background-color: #f4f4f4;
     position: relative;
     text-align: center;
     padding: 3em 0;
     isolation: isolate;
+
+    @media only screen and (min-width: 768px) {
+        font-size: 1.7vw;
+        padding: 6em 0;
+
+        &::before {
+            content: '';
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: calc(50% + 16em);
+            background-color: var(--primary-color);
+            height: 100%;
+            z-index: -1;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        font-size: inherit;
+    }
 
     .content {
         width: 96%;
@@ -13,6 +32,10 @@
         display: inline-block;
         vertical-align: middle;
         margin: 0 auto 3em;
+
+        @media only screen and (min-width: 768px) {
+            margin: 0 3em 0 0;
+        }
 
         span {
             background-color: #212121;
@@ -62,29 +85,5 @@
         display: inline-block;
         vertical-align: middle;
         border-radius: .5em;
-    }
-
-    @media only screen and (min-width: 768px) {
-        font-size: 1.7vw;
-        padding: 6em 0;
-
-        &::before {
-            content: '';
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: calc(50% + 16em);
-            background-color: var(--primary-color);
-            height: 100%;
-            z-index: -1;
-        }
-
-        .content {
-            margin: 0 3em 0 0;
-        }
-    }
-
-    @media only screen and (min-width: 1024px) {
-        font-size: inherit;
     }
 }

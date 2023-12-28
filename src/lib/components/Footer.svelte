@@ -9,7 +9,7 @@
     fullAddress,
     googleLink,
     companyName,
-    pages,
+    interiorPages,
     services,
   } from "$lib/config"
   import { page } from "$app/stores"
@@ -50,9 +50,12 @@
         <h2>Sitemap</h2>
         <ul>
           <!-- pages controled by site config-->
-          {#each pages as { name, path }}
+          <li class="link">
+            <a href="/" class:active={$page.url.pathname === "/"}>home</a>
+          </li>
+          {#each interiorPages as { name, path }}
             <li class="link">
-              <a href={path} class:active={$page.url.pathname === path}>{name}</a>
+              <a href={path} class:active={$page.url.pathname.startsWith(path)}>{name}</a>
             </li>
           {/each}
         </ul>

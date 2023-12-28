@@ -2,13 +2,13 @@
   // components
 
   // stores
-  import { URL, companyName, industry, cityAndState, pages, services } from "$lib/config"
+  import { URL, companyName, industry, cityAndState, interiorPages, services } from "$lib/config"
   import { page } from "$app/stores"
   // styles
   import "$styles/home.less"
 
   // logic
-  const thisPage = pages.find((p) => p.path === $page.route.id)
+  const thisPage = interiorPages.find((p) => p.path === $page.route.id)
 </script>
 
 <svelte:head>
@@ -44,7 +44,7 @@
 <section id="landing">
   <div class="content">
     <span>Made with Sveltekit</span>
-    <h1>Web development,<br /> streamlined</h1>
+    <h1>small business web development & design</h1>
     <p>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates adipisci et magni
       laborum, voluptatibus omnis soluta numquam neque eaque inventore.

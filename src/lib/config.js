@@ -9,12 +9,8 @@ export const phone = '(918) 123-4567'
 export const fullAddress = '1234 East Tulsa, Ok 12345'
 export const email = 'biz@email.com'
 export const googleLink = ''
-export const pages = [
-    {
-        name: "Home",
-        path: "/",
-        metaDescription: "",
-    },
+
+export const interiorPages = [
     {
         name: "About",
         path: "/about",
