@@ -1,8 +1,8 @@
 // place files you want to import through the `$lib` alias in this folder.
 export const URL = 'https://site.com';
-export const TITLE = 'Company name';
+export const TITLE = 'Rivas Web Designs';
 export const OG_IMAGE = '';
-export const companyName = 'Company Name'
+export const companyName = 'Rivas Web Designs'
 export const cityAndState = 'Tulsa, Ok'
 export const industry = 'Web Design'
 export const phone = '(918) 123-4567'

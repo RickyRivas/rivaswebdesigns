@@ -6,9 +6,22 @@
   import { page } from "$app/stores"
   // styles
   import "$styles/home.less"
+  import BtnArrow from "$lib/components/BtnArrow.svelte"
 
   // logic
   const thisPage = interiorPages.find((p) => p.path === $page.route.id)
+
+  // Email CTA
+  let ctaEmail = ""
+
+  function submitCTAForm() {
+    alert(ctaEmail)
+
+    // clear field
+    ctaEmail = ""
+  }
+
+  $: console.log(ctaEmail)
 </script>
 
 <svelte:head>
@@ -43,13 +56,35 @@
 
 <section id="landing">
   <div class="content">
-    <span>Made with Sveltekit</span>
     <h1>small business web development & design</h1>
     <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates adipisci et magni
-      laborum, voluptatibus omnis soluta numquam neque eaque inventore.
+      We are a Tulsa Web Design agency that provides custom-coded, professionally designed websites
+      that deliver premium results. No WordPress or Page-builders.
     </p>
-    <a href="/" class="cta">Read the docs</a>
+
+    <!-- <a href="/" class="btn"
+      >get in touch
+      <BtnArrow />
+    </a> -->
+
+    <!-- 1. Enter email 2. Show modal with email filled + add. fields 3. Submit-->
+    <form class="cta-email" on:submit|preventDefault={submitCTAForm}>
+      <input
+        id="cta-email"
+        class:active={ctaEmail.length > 0}
+        type="text"
+        name="Email for Modal"
+        placeholder="enter your email"
+        required
+        bind:value={ctaEmail} />
+      <label for="cta-email" class="screenreader">enter your email</label>
+      <button>get in touch <BtnArrow /></button>
+    </form>
   </div>
-  <img class="hero" src="/img01.jpg" alt="laptop" width="500" height="610" decoding="async" />
+
+  <div class="video-wrapper">
+    <video id="herovid" preload="none" autoplay loop muted playsinline poster="/video/poster.jpg">
+      <source type="video/mp4" src="/video/hero-video.mp4" />
+    </video>
+  </div>
 </section>

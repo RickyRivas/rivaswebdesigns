@@ -3,6 +3,7 @@
   import { interiorPages } from "$lib/config"
   import { page } from "$app/stores"
   import Logo from "$lib/Logo.svelte"
+  import BtnArrow from "./BtnArrow.svelte"
 
   let isActive = false
 
@@ -37,7 +38,7 @@
       </ul>
 
       <!-- Nav wrap CTA -->
-      <a href="/" class="btn">schedule a consultation</a>
+      <a href="/contact" class="btn" on:click={toggleNav}>get in touch<BtnArrow /></a>
     </div>
 
     <!-- Toggle -->
