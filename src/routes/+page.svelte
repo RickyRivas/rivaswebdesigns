@@ -5,8 +5,8 @@
   import { URL, companyName, industry, cityAndState, interiorPages, services } from "$lib/config"
   import { page } from "$app/stores"
   // styles
-  import "$styles/home.less"
   import BtnArrow from "$lib/components/BtnArrow.svelte"
+  import { onMount } from "svelte"
 
   // logic
   const thisPage = interiorPages.find((p) => p.path === $page.route.id)
@@ -20,8 +20,6 @@
     // clear field
     ctaEmail = ""
   }
-
-  $: console.log(ctaEmail)
 </script>
 
 <svelte:head>
@@ -62,11 +60,6 @@
       that deliver premium results. No WordPress or Page-builders.
     </p>
 
-    <!-- <a href="/" class="btn"
-      >get in touch
-      <BtnArrow />
-    </a> -->
-
     <!-- 1. Enter email 2. Show modal with email filled + add. fields 3. Submit-->
     <form class="cta-email" on:submit|preventDefault={submitCTAForm}>
       <input
@@ -83,8 +76,58 @@
   </div>
 
   <div class="video-wrapper">
-    <video id="herovid" preload="none" autoplay loop muted playsinline poster="/video/poster.jpg">
+    <video id="herovid" preload="none" autoplay loop muted playsinline poster="">
       <source type="video/mp4" src="/video/hero-video.mp4" />
     </video>
+  </div>
+</section>
+
+<!----                      ---->
+<!----    Divider      ---->
+<!----                      ---->
+
+<section id="services">
+  <h2 class="title">what we do</h2>
+  <p class="section-description">
+    Rivas Web Designs provides advanced digital marketing solutions with custom web development and
+    design. Our professionally crafted websites set you apart from the competition, boosting
+    revenue. Say goodbye to generic templates and elevate your business with a unique, tailored
+    online presence.
+  </p>
+
+  <div class="card">
+    <h3 class="title">website design</h3>
+    <p>
+      Our web designs are original developed with thorough research and expertise to deliver the
+      best user experience for your customers.
+    </p>
+    <a href="/" class="btn"
+      >get in touch
+      <BtnArrow />
+    </a>
+  </div>
+
+  <div class="card">
+    <h3 class="title">website development</h3>
+    <p>
+      We don’t use WordPress or page-builders. Our websites are hand-coded line by line in order to
+      achieve the best performance and flexibility.
+    </p>
+    <a href="/" class="btn"
+      >get in touch
+      <BtnArrow />
+    </a>
+  </div>
+
+  <div class="card">
+    <h3 class="title">maintenance & support</h3>
+    <p>
+      No worrying about finding time to update your website. We take care of all website maintenance
+      and edits the same day.
+    </p>
+    <a href="/" class="btn"
+      >get in touch
+      <BtnArrow />
+    </a>
   </div>
 </section>

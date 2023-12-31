@@ -1,3 +1,5 @@
+@import url('./mixins.less');
+
 // Core styles for entire app
 * {
     box-sizing: border-box;
@@ -6,13 +8,18 @@
 }
 
 :root {
-    --primary-color: #8A1A23;
+    --primary: #8A1A23;
     --secondary: #033B52;
-    --background-color: #F1F2EE;
+    --background-color: #faf7f2;
     --toggleBg: #ffffff;
     --toggleText: #000000;
     --global-easing: cubic-bezier(0.85, 0, 0.15, 1);
+    --heading-color: #212121;
+    --global-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
+
+@primaryColor: #8A1A23;
+@secondaryColor: #033B52;
 
 /* Mona Sans */
 @font-face {
@@ -95,4 +102,60 @@ input[type=number] {
     position: absolute;
     overflow: hidden;
     clip: rect(0 0 0 0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 500;
+    color: var(--heading-color);
+    text-transform: capitalize;
+    line-height: 1;
+}
+
+p {
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0 1em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: (15/20em);
+    line-height: (40/15);
+    transition: background-color .33s ease;
+
+    svg {
+        display: inline-block;
+        vertical-align: middle;
+        width: (15/15em);
+        height: auto;
+        margin-left: (10/15em);
+        color: #fff;
+        transition: transform .33s ease;
+
+        path.rect {
+            opacity: 0;
+            transition: opacity .33s ease;
+        }
+    }
+
+    &:hover {
+        background-color: var(--secondary);
+
+        svg {
+            transform: translateX(.25em);
+
+            path.rect {
+                opacity: 1;
+            }
+        }
+    }
 }

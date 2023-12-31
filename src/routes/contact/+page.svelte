@@ -15,8 +15,7 @@
     interiorPages,
   } from "$lib/config"
   import { page } from "$app/stores"
-  // styles
-  import "$styles/contact.less"
+
   // logic
   const thisPage = interiorPages.find((p) => p.path === $page.route.id)
   const pageTitle = $page.route.id?.slice(1)

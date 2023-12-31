@@ -1,7 +1,6 @@
 <script lang="ts">
   // components
   // stores
-  // styles
   // logic
   // props
   export let pageTitle: any

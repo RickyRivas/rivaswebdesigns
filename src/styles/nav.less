@@ -1,7 +1,9 @@
 #mainnav {
     position: fixed;
     width: 100%;
-    background-color: var(--background-color);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, .7);
     z-index: 3000;
     top: 0;
     left: 0;
@@ -15,12 +17,12 @@
         justify-content: space-between;
         align-items: center;
         position: relative;
-        max-width: 60em;
         margin: 0 auto;
         padding: 0 0 0 .5em;
 
         @media only screen and (min-width: 1024px) {
-            padding: 1em 0;
+            padding: .5em 0;
+            max-width: 60em;
         }
     }
 }
@@ -34,6 +36,12 @@
         display: inline-block;
         width: (70/20em);
         height: (26/20em);
+        color: #212121;
+        transition: color .33s ease;
+    }
+
+    &:hover svg {
+        color: var(--primary);
     }
 }
 
@@ -107,7 +115,7 @@
 
         &.active a,
         &:hover a {
-            color: var(--primary-color);
+            color: var(--primary);
             background-color: fade(#8A1A23, 10%);
         }
     }
@@ -123,7 +131,7 @@
     color: white;
     width: @trigger;
     height: @trigger;
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     transition: background-color .33s var(--global-easing);
     z-index: 2;
 
@@ -184,7 +192,7 @@
     text-decoration: none;
     text-align: center;
     text-transform: capitalize;
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     color: #fff;
     font-size: (20/20em);
     line-height: (@ls/20);
@@ -204,6 +212,7 @@
         margin-left: (10/15em);
         color: #fff;
         transition: transform .33s ease;
+        line-height: 0;
 
         path.rect {
             opacity: 0;

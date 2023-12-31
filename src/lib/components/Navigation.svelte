@@ -1,5 +1,4 @@
 <script lang="ts">
-  import "$styles/nav.less"
   import { interiorPages } from "$lib/config"
   import { page } from "$app/stores"
   import Logo from "$lib/Logo.svelte"

@@ -14,9 +14,6 @@
   } from "$lib/config"
   import { page } from "$app/stores"
 
-  // styles
-  import "$styles/footer.less"
-
   // logic
 </script>
 
