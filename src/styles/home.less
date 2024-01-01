@@ -16,11 +16,9 @@
     }
 
     .content {
+        display: block;
         width: 96%;
         max-width: (780/20em);
-        text-align: center;
-        display: inline-block;
-        vertical-align: middle;
         margin: 0 auto (75/20em);
         position: relative;
         z-index: 1;
@@ -39,24 +37,21 @@
         p {
             @fs: 22;
             font-size: (@fs/20em);
-            line-height: (30/@fs);
             margin: 0 0 (50/@fs)*1em 0;
         }
     }
 
     .cta-email {
-        display: flex;
+        display: inline-flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
         background-color: white;
         border: 2px solid var(--primary);
-        position: relative;
         overflow: hidden;
         font-size: 16px;
-        width: 100%;
         gap: .15em;
         max-width: 450px;
-        margin: 0 auto;
 
         @media only screen and (min-width: 768px) {
             font-size: 15px;
@@ -136,12 +131,11 @@
 
     .video-wrapper {
         display: block;
+        position: relative;
         width: 96%;
         max-width: (1400/20em);
         margin: 0 auto;
         overflow: hidden;
-        position: relative;
-        z-index: 1;
 
         &::before {
             content: '';
@@ -165,11 +159,6 @@
     background-color: white;
 
     @media only screen and (min-width: 768px) {
-        font-size: 1.5vw;
-    }
-
-    @media only screen and (min-width: 1024px) {
-        font-size: inherit;
         padding: 5em 0;
     }
 
@@ -188,15 +177,15 @@
     }
 
     .card {
-        display: inline-block;
-        vertical-align: top;
+        .ib;
         text-align: left;
         width: 100%;
-        max-width: (340/20em);
+        max-width: (390/20em);
         background-color: var(--background-color);
         padding: 1em;
 
         @media only screen and (min-width: 768px) {
+            font-size: min(1.5vw, 1em);
             margin: 0 1em;
         }
     }
